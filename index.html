@@ -60,6 +60,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);bac
 .hero .bg{position:absolute;inset:0;background-size:cover;background-position:center}
 .hero .veil{position:absolute;inset:0;background:linear-gradient(95deg,rgba(7,21,40,.95) 0%,rgba(8,26,49,.88) 38%,rgba(9,29,55,.62) 70%,rgba(10,32,60,.32) 100%)}
 .hero-in{position:relative;padding:88px 0 94px;max-width:640px}
+.hero-veh{display:none}
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,.16);border:1px solid rgba(37,211,102,.5);color:#bff5d2;padding:7px 15px;border-radius:50px;font-weight:600;font-size:.86rem;margin-bottom:22px}
 .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 9px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
@@ -101,12 +102,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);bac
 .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
 .product{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
 .product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.product .pimg{aspect-ratio:1/1;background:#fff;display:grid;place-items:center;padding:18px;overflow:hidden}
-.product .pimg img{width:100%;height:100%;object-fit:contain}
-/* normalize cylinder sizes — each product photo is framed differently */
-.shop-grid .product:nth-child(1) .pimg img{transform:scale(.90)}   /* 3kg: photo cropped tight */
-.shop-grid .product:nth-child(2) .pimg img{transform:scale(1.24)}  /* 5kg: lots of whitespace */
-.shop-grid .product:nth-child(5) .pimg img{transform:scale(.94)}   /* 19kg: cropped tight */
+.product .pimg{background:#fff;display:flex;align-items:center;justify-content:center;padding:18px;height:220px;overflow:hidden}
+.product .pimg img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.shop-grid .product:nth-child(2) .pimg img{transform:scale(1.2)}  /* 5kg photo has extra whitespace */
 .product .pbody{padding:18px 18px 22px;border-top:1px solid var(--line);text-align:center}
 .product h3{font-size:1.2rem;margin-bottom:2px}
 .product .psub{font-size:.9rem;color:var(--muted);margin-bottom:15px}
@@ -193,9 +191,11 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
   .fgrid{grid-template-columns:1fr}
   .fab .lbl{display:none}
   .fab{padding:14px;right:16px;bottom:16px}
-  .hero-in{padding:46px 0 54px}
-  .hero .bg{background-position:58% center}
-  .hero .veil{background:linear-gradient(180deg,rgba(7,20,38,.80) 0%,rgba(8,24,46,.86) 52%,rgba(9,28,54,.93) 100%)}
+  .hero{background:linear-gradient(160deg,var(--navy),var(--navy2))}
+  .hero .bg,.hero .veil{display:none}
+  .hero-in{padding:34px 0 0}
+  .hero-veh{display:block;width:100%;height:auto;margin-top:18px;border-top:3px solid rgba(255,255,255,.08)}
+  .product .pimg{height:170px}
 }
 </style>
 </head>
@@ -238,6 +238,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
       <span><i>&#10003;</i><b>Cards accepted.</b> Visa &amp; Mastercard</span>
     </div>
   </div>
+  <img class="hero-veh" src="hero-bakkie.webp" alt="MG Gas delivery bakkie" loading="lazy" decoding="async">
 </section>
 
 <!-- TRUST -->
