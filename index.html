@@ -48,7 +48,7 @@ section{padding:72px 0}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
 .brand{display:flex;align-items:center}
-.logo-img{height:48px;width:auto}
+.logo-img,.brand img{height:48px;width:auto}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a.lnk{font-weight:500;color:var(--navy2);font-size:.96rem}
 .nav-links a.lnk:hover{color:var(--blue)}
@@ -101,8 +101,12 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);bac
 .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
 .product{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
 .product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.product .pimg{aspect-ratio:1/1;background:#fff;display:grid;place-items:center;padding:18px}
+.product .pimg{aspect-ratio:1/1;background:#fff;display:grid;place-items:center;padding:18px;overflow:hidden}
 .product .pimg img{width:100%;height:100%;object-fit:contain}
+/* normalize cylinder sizes — each product photo is framed differently */
+.shop-grid .product:nth-child(1) .pimg img{transform:scale(.90)}   /* 3kg: photo cropped tight */
+.shop-grid .product:nth-child(2) .pimg img{transform:scale(1.24)}  /* 5kg: lots of whitespace */
+.shop-grid .product:nth-child(5) .pimg img{transform:scale(.94)}   /* 19kg: cropped tight */
 .product .pbody{padding:18px 18px 22px;border-top:1px solid var(--line);text-align:center}
 .product h3{font-size:1.2rem;margin-bottom:2px}
 .product .psub{font-size:.9rem;color:var(--muted);margin-bottom:15px}
@@ -155,7 +159,7 @@ footer{background:#081a31;color:#9fb1c8;padding:50px 0 26px;font-size:.93rem}
 footer h5{font-family:'Poppins';color:#fff;font-size:1rem;margin-bottom:13px;font-weight:600}
 footer a:hover{color:#fff}
 .flogo{display:inline-block;background:#fff;padding:9px 13px;border-radius:11px;margin-bottom:14px}
-.flogo img{height:42px;display:block}
+.flogo img{height:40px;width:auto;display:block}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .fbar{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem;color:#7e92ab}
 .pay{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -189,7 +193,9 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
   .fgrid{grid-template-columns:1fr}
   .fab .lbl{display:none}
   .fab{padding:14px;right:16px;bottom:16px}
-  .hero-in{padding:64px 0 70px}
+  .hero-in{padding:46px 0 54px}
+  .hero .bg{background-position:58% center}
+  .hero .veil{background:linear-gradient(180deg,rgba(7,20,38,.80) 0%,rgba(8,24,46,.86) 52%,rgba(9,28,54,.93) 100%)}
 }
 </style>
 </head>
@@ -200,7 +206,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#home" aria-label="MG Gas Company home"><img src="logo.webp" alt="MG Gas Company logo" width="320" height="282" loading="eager" decoding="async" fetchpriority="high"></a>
+    <a class="brand" href="#home" aria-label="MG Gas Company home"><img class="logo-img" src="logo.webp" alt="MG Gas Company logo" width="320" height="282" loading="eager" decoding="async" fetchpriority="high"></a>
     <nav class="nav-links" id="menu">
       <a class="lnk" href="#services">Services</a>
       <a class="lnk" href="#shop">Shop</a>
