@@ -1,0 +1,5 @@
+# robots.txt for mg-gas.co.za
+User-agent: *
+Allow: /
+
+Sitemap: https://mg-gas.co.za/sitemap.xml
