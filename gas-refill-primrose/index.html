@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) — GA4 property "MG Gas Company", measurement ID G-6QYJ1Z8W5L. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QYJ1Z8W5L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6QYJ1Z8W5L');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gas Refill &amp; Delivery in Primrose, Germiston | MG Gas Company</title>
@@ -534,6 +542,22 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
   document.getElementById('burger').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});
   document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open');});});
   document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+
+<!-- GA4 lead-event tracking: fires lead_call on tel: clicks, lead_whatsapp on wa.me clicks, any CTA on this page -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    if(/^tel:/i.test(href)){
+      if(window.gtag) gtag('event','lead_call',{event_category:'lead',event_label:href});
+    } else if(/^https?:\/\/(www\.)?wa\.me\//i.test(href)){
+      if(window.gtag) gtag('event','lead_whatsapp',{event_category:'lead',event_label:href});
+    }
+  }, true);
+})();
 </script>
 </body>
 </html>
