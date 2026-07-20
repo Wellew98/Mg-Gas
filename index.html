@@ -82,6 +82,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);bac
 .nav-links a.lnk{font-weight:500;color:var(--navy2);font-size:.96rem}
 .nav-links a.lnk:hover{color:var(--blue)}
 .nav-cta{display:flex;align-items:center;gap:10px}
+.social-ic{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;background:#eef2f6;color:var(--blue,#1877F2);flex:none}
+.social-ic:hover{background:#e2e8f0}
+.social-ic .ic{fill:currentColor}
 .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
 .burger span{display:block;width:24px;height:2.5px;background:var(--navy);border-radius:2px;margin:5px 0;transition:.25s}
 
@@ -247,6 +250,9 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
       "description": "MG Gas Company supplies LP gas cylinder refills, exchanges and new cylinders in all sizes (3kg to 48kg), plus certified gas installations, geysers, heaters, stoves and industrial gases, with same-day delivery across Germiston. Brands: Easigas, Totalgas, Oryx and Handigas.",
       "currenciesAccepted": "ZAR",
       "paymentAccepted": "Cash, Visa, Mastercard",
+      "sameAs": [
+        "https://www.facebook.com/people/Mg-gas-company/61591381522000/"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "387 President Street, Germiston South (Industries East A)",
@@ -265,7 +271,10 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
         { "@type": "Place", "name": "Klippoortjie" },
         { "@type": "Place", "name": "Delville" },
         { "@type": "Place", "name": "Roodekop" },
-        { "@type": "Place", "name": "Marlands" }
+        { "@type": "Place", "name": "Marlands" },
+        { "@type": "Place", "name": "Bedfordview" },
+        { "@type": "Place", "name": "Edenvale" },
+        { "@type": "Place", "name": "Greenstone Hill" }
       ],
       "openingHoursSpecification": [
         { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00" },
@@ -314,7 +323,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 </head>
 <body>
 
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wa" viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.8 6.5L3 29l7.2-2.3c1.8 1 3.8 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.4 1.4-4.2-.3-.4a10 10 0 0 1-1.6-5.4C5.8 9.8 10.3 5.3 16 5.3S26.2 9.8 26.2 15.5 21.7 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6s-.7-1.7-1-2.3-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4a3.6 3.6 0 0 0-1.1 2.7c0 1.6 1.1 3.1 1.3 3.3s2.3 3.5 5.5 4.9c2 .8 2.7.9 3.7.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.4z"/></symbol></svg>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wa" viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.8 6.5L3 29l7.2-2.3c1.8 1 3.8 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.4 1.4-4.2-.3-.4a10 10 0 0 1-1.6-5.4C5.8 9.8 10.3 5.3 16 5.3S26.2 9.8 26.2 15.5 21.7 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6s-.7-1.7-1-2.3-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4a3.6 3.6 0 0 0-1.1 2.7c0 1.6 1.1 3.1 1.3 3.3s2.3 3.5 5.5 4.9c2 .8 2.7.9 3.7.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.4z"/></symbol><symbol id="fb" viewBox="0 0 32 32"><path d="M29 16a13 13 0 1 0-15 12.85V19.9h-3.3V16H14v-3c0-3.4 2-5.2 5-5.2 1.5 0 3 .27 3 .27v3.3h-1.7c-1.7 0-2.2 1-2.2 2.1V16h3.7l-.6 3.9H18v8.95A13 13 0 0 0 29 16z"/></symbol></svg>
 
 <!-- NAV -->
 <header class="nav">
@@ -329,6 +338,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
     </nav>
     <div class="nav-cta">
       <a class="btn btn-call btn-sm" href="tel:+27787227746"><svg class="ic" viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>Call</a>
+      <a class="social-ic" href="https://www.facebook.com/people/Mg-gas-company/61591381522000/" target="_blank" rel="noopener" aria-label="MG Gas Company on Facebook"><svg class="ic" viewBox="0 0 32 32" width="20" height="20"><use href="#fb"/></svg></a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -471,6 +481,9 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
     <span class="tag"><a href="/gas-refill-delville/">Delville</a></span>
     <span class="tag"><a href="/gas-refill-roodekop/">Roodekop</a></span>
     <span class="tag"><a href="/gas-refill-marlands/">Marlands</a></span>
+    <span class="tag"><a href="/gas-refill-bedfordview/">Bedfordview</a></span>
+    <span class="tag"><a href="/gas-refill-edenvale/">Edenvale</a></span>
+    <span class="tag"><a href="/gas-refill-greenstone-hill/">Greenstone Hill</a></span>
   </div>
 </section>
 
@@ -511,6 +524,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
         <div class="flogo"><img src="logo.webp" alt="MG Gas Company logo" width="320" height="282" loading="lazy" decoding="async"></div>
         <p style="max-width:330px">Fast, reliable LP gas refills, exchanges, sales and installations, with same-day delivery across Germiston and surrounds.</p>
         <div class="pay" style="margin-top:16px"><small style="color:#8298b3">We accept</small> <span>VISA</span> <span>MASTERCARD</span> <span>CASH</span></div>
+        <div style="margin-top:16px"><a href="https://www.facebook.com/people/Mg-gas-company/61591381522000/" target="_blank" rel="noopener" aria-label="MG Gas Company on Facebook" style="display:inline-flex;align-items:center;gap:6px;color:inherit"><svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor"><use href="#fb"/></svg> Follow us on Facebook</a></div>
       </div>
       <div>
         <h5>Explore</h5>
